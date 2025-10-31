@@ -11,10 +11,10 @@ export default function ChallengeItem({
   const isEmoji = typeof icon === "string";
 
   return (
-    <div className={`flex items-center justify-between rounded-2xl bg-[#F5F5F5] border-1 border-[#E5E5E5] py-2 px-3 ${className}`}>
-      <div className="flex items-center gap-3">
+    <div className={`flex items-center justify-between rounded-2xl bg-[#F5F5F5] border-1 border-[#E5E5E5] py-1 md:py-2 px-1 md:px-3 ${className}`}>
+      <div className="flex items-center gap-3 px-3 md:py-0">
         <span
-          className="flex h-18 w-18 items-center justify-center rounded-full bg-white text-4xl"
+          className="flex h-12 w-12 md:h-18 md:w-18 items-center justify-center rounded-full bg-white text-xl md:text-4xl"
           role={isEmoji ? "img" : undefined}
           aria-label={isEmoji ? iconLabel : undefined}
           aria-hidden={isEmoji && !iconLabel ? true : undefined}
@@ -23,16 +23,16 @@ export default function ChallengeItem({
           {icon}
         </span>
         <div className="py-3">
-          <p className="font-bold text-lg leading-[43px]">{title}</p>
+          <p className="font-bold text-sm md:text-lg md:leading-[43px]">{title}</p>
           {subtitle ? (
-            <p className="text-base text-kiddo-muted leading-auto">{subtitle}</p>
+            <p className="text-[10px] md:text-base text-kiddo-muted leading-auto">{subtitle}</p>
           ) : null}
         </div>
       </div>
 
-      <div className="text-right p-3 ">
-        <p className="font-bold text-[28px]">{rewardText}</p>
-        <p className="text-[14px] text-kiddo-muted ">{rewardUnit}</p>
+      <div className="text-right pl-0 md:pl-3 py-3 px-3">
+        <p className="font-bold text-xl md:text-[28px] text-nowrap">{rewardText}</p>
+        <p className="text-[8px] md:text-[14px] text-kiddo-muted ">{rewardUnit}</p>
       </div>
     </div>
   );

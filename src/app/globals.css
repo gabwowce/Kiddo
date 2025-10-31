@@ -21,7 +21,8 @@
   --color-kiddo-card:    #F5F5F5; /* kortelių BG */
 
   --color-kiddo-accent:  #DF484B; /* akcentai */
-  --color-kiddo-brand:   #2463EB; /* mygtukai/checkbox */
+  --color-kiddo-brand:   #2463EB; 
+    --color-kiddo-brand2:   #000000; 
   --color-kiddo-btn:   #1E293B; 
 }
 
@@ -30,5 +31,77 @@
 }
 
 
+
 html { scroll-behavior: smooth; }
+
+video { image-rendering: auto; }
+
+/* .reveal-initial, .stagger-load > * { outline: 1px dashed red; } */
+
+
+
+@layer utilities {
+
+  .kiddo-container {
+    @apply w-full mx-auto px-8 sm:px-5 md:px-6 lg:px-8 xl:px-10;
+    max-width: 100%;
+  }
+
+  /* Max-width pagal Tailwind breakpoint'us */
+  @media (min-width: 640px) {  /* sm */
+    .kiddo-container { max-width: 40rem; }   /* 640px */
+  }
+  @media (min-width: 768px) {  /* md */
+    .kiddo-container { max-width: 48rem; }   /* 768px */
+  }
+  @media (min-width: 1024px) { /* lg */
+    .kiddo-container { max-width: 64rem; }   /* 1024px */
+  }
+  @media (min-width: 1280px) { /* xl */
+    .kiddo-container { max-width: 80rem; }   /* 1280px */
+  }
+  @media (min-width: 1536px) { /* 2xl */
+    .kiddo-container { max-width: 90rem; }   /* 1440px/1536px klasė */
+  }
+
+  @keyframes rise { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+
+  /* On-load variantas virš klosčio */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal-initial{ opacity:0; animation:rise 600ms ease-out both; }
+    .stagger-load > *{
+      opacity:0; animation:rise 520ms ease-out both;
+    }
+    .stagger-load > *:nth-child(2){animation-delay:.08s}
+    .stagger-load > *:nth-child(3){animation-delay:.16s}
+    .stagger-load > *:nth-child(4){animation-delay:.24s}
+  }
+
+  /* Scroll-driven viskam, kas žemiau hero */
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: view()){
+      .stagger{
+        view-timeline-name: --st; view-timeline-axis: block;
+      }
+      .stagger > *{
+        opacity:0; animation:rise 520ms ease-out both;
+        animation-timeline: --st; animation-range: entry 0% cover 35%;
+      }
+      .reveal{
+        opacity:0; animation:rise 600ms ease-out both;
+        animation-timeline: view(block); animation-range: entry 0% cover 35%;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-initial, .stagger > *, .stagger-load > *{
+      animation:none !important; opacity:1 !important; transform:none !important;
+    }
+  }
+
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
 
