@@ -8,9 +8,9 @@ import LogoLink from "./LogoLink";
 import MobileSheet from "./MobileSheet";
 
 const nav = [
-  { href: "#problem", label: "Problem" },
-  { href: "#features", label: "Features" },
-  { href: "#how", label: "How It Works?" },
+  { href: "#problem", label: "Problema" },
+  { href: "#features", label: "Sprendimai" },
+  { href: "#how", label: "Kaip tai veikia?" },
 ];
 
 export default function Header() {

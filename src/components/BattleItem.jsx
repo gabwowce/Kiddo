@@ -2,7 +2,7 @@
 export default function BattleItem({ icon, iconLabel, title, text }) {
   const isEmoji = typeof icon === "string";
   return (
-    <li className="flex gap-4">
+    <li className="u-reveal flex gap-4">
       <span
         className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#F5F5F5] text-xl"
         role={isEmoji ? "img" : undefined}

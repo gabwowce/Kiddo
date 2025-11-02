@@ -12,14 +12,17 @@ export default function OptimizedVideo({
   className = "",
   width = 563,
   height = 371,
-  objectFit = "object-contain",
+  objectFit = "object-contain", // pvz. "object-cover" arba "object-contain"
   priority = false,
 
   // elgsenos parametrai (nebūtini)
-  threshold = 0.4,        // kiek video turi būti matoma (0..1)
+  threshold = 0.4,
   rootMargin = "0px 0px -10% 0px",
-  resetOnLeave = true,    // išeinant iš viewport – grąžinti į 0s
-  playOnlyOnce = false,   // sugroja tik pirmą kartą
+  resetOnLeave = true,
+  playOnlyOnce = false,
+
+  // svarbu Next Image su fill
+  sizes = "100vw",
 }) {
   const vRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -46,16 +49,13 @@ export default function OptimizedVideo({
     v.addEventListener("error", onError);
 
     const io = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
+      ([entry]) => {
         if (!entry) return;
 
-        // matomumo tikrinimas
         if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
           if (prefersReduce) return;
           if (playOnlyOnce && hasPlayedOnce) return;
 
-          // startinam nuo pradžios, kad nebūtų „įsuktas vidury“
           v.currentTime = 0;
           v.play().catch(() => {});
           setHasPlayedOnce(true);
@@ -78,32 +78,35 @@ export default function OptimizedVideo({
 
   return (
     <div
-      className={`relative ${className}`}
+      className={`relative w-full overflow-hidden ${className}`}
       style={{ aspectRatio: `${width}/${height}` }}
       aria-label="decorative video"
     >
-      {/* Poster – išnyksta, kai video realiai pradeda groti */}
+      {/* Poster — dengia iki kol video realiai pradeda groti */}
       {posterSrc && (
         <Image
           src={posterSrc}
           alt=""
           fill
+          sizes={sizes} // ← būtina su `fill`
           priority={priority}
-          className={`${objectFit} transition-opacity duration-200 ${ready ? "opacity-0" : "opacity-100"}`}
+          className={`absolute inset-0 w-full h-full ${objectFit} transition-opacity duration-200 ${
+            ready ? "opacity-0" : "opacity-100"
+          }`}
         />
       )}
 
       <video
         ref={vRef}
-        className={`absolute inset-0 ${objectFit} transition-opacity duration-200 ${
+        className={`absolute inset-0 w-full h-full ${objectFit} transition-opacity duration-200 ${
           ready ? "opacity-100" : "opacity-0"
         }`}
-        // neautoplayinam iki IO leidimo (kontroliuojam patys)
-        preload="none"
+        preload="none"    // autoplay valdomas per IO
         loop
         muted
         playsInline
         poster={posterSrc}
+        aria-hidden="true"
       >
         {srcWebm && <source src={srcWebm} type="video/webm" />}
         {srcMp4 && <source src={srcMp4} type="video/mp4" />}

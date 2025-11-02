@@ -1,5 +1,8 @@
+"use client";
 import Header from "@/components/header/Header";
+import { initReveal } from "@/lib/initReveal";
 import localFont from "next/font/local";
+import { useEffect } from "react";
 import "./globals.css";
 const Kiddo = localFont({
   src: [
@@ -13,6 +16,16 @@ const Kiddo = localFont({
 });
 
 export default function RootLayout({ children }) {
+   useEffect(() => {
+    const stop = initReveal({
+      threshold: 0.18,
+      rootMargin: "0px 0px -10% 0px",
+      once: true,
+      observeMutations: true,
+    });
+    return () => stop();
+  }, []);
+
   return (
     <html lang="en" className={Kiddo.variable}>
       <head>

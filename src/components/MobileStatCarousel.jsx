@@ -3,7 +3,7 @@
 import StatCard from "@/components/StatCard";
 import { useRef } from "react";
 
-export default function MobileStatCarousel({ items = [] }) {
+export default function MobileStatCarousel({ items = [], titleStyle="text-6xl" }) {
   const ref = useRef(null);
 
   return (
@@ -12,7 +12,7 @@ export default function MobileStatCarousel({ items = [] }) {
         ref={ref}
         className="
           flex gap-4 overflow-x-auto no-scrollbar scroll-smooth
-          snap-x snap-mandatory bg-[#FAFAFA] border-18 border-[#FAFAFA]
+          snap-x snap-mandatory md:bg-[#FAFAFA] md:border-18 md:border-[#FAFAFA]
           px-4 -mx-4 pb-2
         "
         style={{ scrollPaddingLeft: "1rem" }} /* px-4 */
@@ -32,6 +32,7 @@ export default function MobileStatCarousel({ items = [] }) {
               label={it.label}
               bg={it.bg}
               textColor={it.textColor}
+              titleStyle={titleStyle}
             />
           </li>
         ))}
