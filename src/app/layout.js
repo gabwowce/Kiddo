@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import localFont from "next/font/local";
 import "./globals.css";
 const Kiddo = localFont({
