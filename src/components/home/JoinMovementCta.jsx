@@ -7,9 +7,9 @@ export default function JoinMovementCta(){
         <section className="pt-0 xl:pt-112 pb-24 xl:pb-156">
           <div className="mx-auto max-w-5xl text-center  px-8 u-stagger">
             <h2 className="u-reveal text-5xl md:text-6xl font-extrabold leading-[58px] tracking-[-0.018em] xl:leading-[63px] xl:tracking-[-0.018em]">
-              Ramūs tėvai. Susikaupę vaikai. 
-              <br className="u-reveal hidden md:block" />
-              Prisijunkite prie bendruomenės, kuri vertina realų ryšį.
+              Ramūs tėvai. Susikaupę vaikai.  
+              
+               Prisijunkite prie bendruomenės, kuri vertina realų ryšį.
             </h2>
 
             <p className="u-reveal mt-4 md:mt-8 text-kiddo-muted mx-auto text-xl max-w-[600px]">

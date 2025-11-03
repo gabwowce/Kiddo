@@ -3,7 +3,7 @@
 import StatCard from "@/components/StatCard";
 import { useRef } from "react";
 
-export default function MobileStatCarousel({ items = [], titleStyle="text-6xl" }) {
+export default function MobileStatCarousel({ items = [], titleStyle = "text-6xl" }) {
   const ref = useRef(null);
 
   return (
@@ -11,8 +11,12 @@ export default function MobileStatCarousel({ items = [], titleStyle="text-6xl" }
       <ul
         ref={ref}
         className="
-          flex gap-4 overflow-x-auto no-scrollbar scroll-smooth
-          snap-x snap-mandatory md:bg-[#FAFAFA] md:border-18 md:border-[#FAFAFA]
+          flex gap-4
+          overflow-x-auto overflow-y-hidden        /* ← tik į šoną */
+          no-scrollbar scroll-smooth
+          snap-x snap-mandatory
+          overscroll-y-none                        /* ← neperduoda vertikalaus scroll'o */
+          touch-pan-x                              /* ← leidžia tik horizontalų swipe */
           px-4 -mx-4 pb-2
         "
         style={{ scrollPaddingLeft: "1rem" }} /* px-4 */
