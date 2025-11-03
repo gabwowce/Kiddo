@@ -22,19 +22,13 @@ export default function HeroSection(){
                     „Kiddo School Mode“ automatiškai blokuoja nereikalingas programėles pamokų metu – ramybė klasėje be pastangų.
                     </p>
                     <Link
-                    href="/join/1"
+                    href="/survey?source=hero&audience=schools"
                     className="u-reveal inline-flex items-center justify-center bg-kiddo-brand px-5 py-3  text-white font-bold hover:bg-kiddo-brand/80 w-full max-w-[250px] 
                     text-center shadow-[0_4px_4px_rgba(0,0,0,0.25)] leading-6 tracking-0 "
                     >
                     Gauti pasiūlymą
                     </Link>
-                    {/* <div className="flex items-center gap-4 mt-2 ">
-                    <Image src={avatarsPic} alt="Kiddo" width={80} height={32} priority className="justify-self-end" />
-                    <p className="text-kiddo-muted text-base font-bold leading-[1.65]">
-                        163+ parents have already joined
-                    </p>
-                    </div> */}
-                    
+                                     
 
                 </div>
 

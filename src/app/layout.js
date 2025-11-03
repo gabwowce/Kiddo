@@ -1,9 +1,12 @@
 "use client";
+
 import Header from "@/components/header/Header";
 import { initReveal } from "@/lib/initReveal";
 import localFont from "next/font/local";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import "./globals.css";
+
 const Kiddo = localFont({
   src: [
     { path: "../asset/fonts/Gilroy-Medium.woff2", weight: "500", style: "normal" },
@@ -16,7 +19,10 @@ const Kiddo = localFont({
 });
 
 export default function RootLayout({ children }) {
-   useEffect(() => {
+  const pathname = usePathname();
+  const hideHeader = pathname?.startsWith("/survey");
+
+  useEffect(() => {
     const stop = initReveal({
       threshold: 0.18,
       rootMargin: "0px 0px -10% 0px",
@@ -32,9 +38,8 @@ export default function RootLayout({ children }) {
         <link rel="preload" as="video" href="/media/Kiddo.webm" type="video/webm" />
       </head>
       <body className="font-sans font-medium">
-        <Header />
+        {!hideHeader && <Header />}
         <main>{children}</main>
-        
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ import MobileStatCarousel from "@/components/MobileStatCarousel";
 export default function BenefitsUsersSection() {
   return (
     <section id="benefits" className="pt-32 xl:pt-64">
-      <div className="kiddo-container mx-auto u-stagger">
+      <div className="kiddo-container mx-auto ">
         {/* Header */}
         <div className="text-center mb-10 md:mb-14 u-stagger">
           <h2 className="text-5xl md:text-6xl font-bold tracking-[-0.02em] u-reveal ">
