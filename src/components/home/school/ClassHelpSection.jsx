@@ -5,7 +5,12 @@
 function EmojiBadge({ emoji, className = "" }) {
   return (
     <span
-      className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white text-xl md:text-3xl"
+      className={
+        "inline-flex shrink-0 aspect-square " + // ← neleidžia susispausti ir laiko kvadratą
+        "h-12 w-12 md:h-14 md:w-14 items-center justify-center " +
+        "rounded-full bg-white text-xl md:text-3xl leading-none " + // ← be papildomo line-height
+        className
+      }
     >
       {emoji}
     </span>
