@@ -1,12 +1,8 @@
 "use client";
 
 import { Widget } from "@typeform/embed-react";
-import { useSearchParams } from "next/navigation";
 
 export default function SurveyPage() {
-  const sp = useSearchParams();
-  const source = sp.get("source") || "iphone-css-frame";
-  const audience = sp.get("audience") || "schools";
 
   return (
     <main className="min-h-screen w-full bg-[#F3EDE5] flex items-center justify-center p-4 md:p-10">
@@ -24,7 +20,7 @@ export default function SurveyPage() {
                 hideHeaders
                 hideFooter
                 style={{ width: "100%", height: "100%" }}
-                hidden={{ source, audience }}
+                
               />
             </div>
           </div>

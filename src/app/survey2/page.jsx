@@ -4,11 +4,8 @@ import logoPpic from "@/asset/kiddo-logo.png";
 import { Widget } from "@typeform/embed-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 export default function SurveyPage() {
-  const sp = useSearchParams();
-  const source = sp.get("source") || "full-web";
-  const audience = sp.get("audience") || "schools";
+
 
   return (
     <main
@@ -51,7 +48,7 @@ export default function SurveyPage() {
               hideHeaders
               hideFooter
               style={{ width: "100%", height: "100%" }}
-              hidden={{ source, audience }}
+   
             />
           </div>
 
