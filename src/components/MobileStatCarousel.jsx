@@ -11,33 +11,35 @@ export default function MobileStatCarousel({ items = [], titleStyle = "text-6xl"
       <ul
         ref={ref}
         className="
-          flex gap-4
-          overflow-x-auto overflow-y-hidden        /* ← tik į šoną */
+          flex gap-4 items-stretch
+          overflow-x-auto overflow-y-visible     /* ← neleisk vidinio vertikalaus scroll'o */
           no-scrollbar scroll-smooth
           snap-x snap-mandatory
-          overscroll-y-none                        /* ← neperduoda vertikalaus scroll'o */
-          touch-pan-x                              /* ← leidžia tik horizontalų swipe */
+          overscroll-x-contain                   /* ← X bounce nepersiduoda tėvui */
           px-4 -mx-4 pb-2
         "
-        style={{ scrollPaddingLeft: "1rem" }} /* px-4 */
+        /* Jokio touchAction! Paliekam naršyklei pačiai spręsti:
+           vertikalūs gestai keliauja tėvui (puslapis), horizontalūs – ul (karuselė) */
+        style={{ scrollPaddingLeft: "1rem", WebkitOverflowScrolling: "touch" }}
       >
         {items.map((it, i) => (
           <li
             key={i}
-            data-card
             className="
-              snap-start shrink-0
-              w-[263px] max-w-[263px]
+              snap-start
+              flex-[0_0_263px] w-[263px]           /* fiksuota kortelės bazė */
               first:ml-0 last:mr-4
             "
           >
-            <StatCard
-              value={it.value}
-              label={it.label}
-              bg={it.bg}
-              textColor={it.textColor}
-              titleStyle={titleStyle}
-            />
+            <div className="h-full overflow-hidden">  {/* ← kortelė pati ne-scroll'ins */}
+              <StatCard
+                value={it.value}
+                label={it.label}
+                bg={it.bg}
+                textColor={it.textColor}
+                titleStyle={titleStyle}
+              />
+            </div>
           </li>
         ))}
       </ul>

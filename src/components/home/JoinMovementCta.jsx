@@ -5,7 +5,7 @@ export default function JoinMovementCta(){
     return(
 
         <section className="pt-0 xl:pt-112 pb-24 xl:pb-156">
-          <div className="mx-auto max-w-5xl text-center  px-8 u-stagger">
+          <div className="mx-auto max-w-5xl text-center  px-8 md:u-stagger">
             <h2 className="u-reveal text-5xl md:text-6xl font-extrabold leading-[58px] tracking-[-0.018em] xl:leading-[63px] xl:tracking-[-0.018em]">
               Ramūs tėvai. Susikaupę vaikai.  
               
@@ -27,16 +27,16 @@ export default function JoinMovementCta(){
             </div>
 
             {/* perks row */}
-            <ul className="mt-6 flex flex-wrap md:items-center md:justify-center gap-x-8 gap-y-3 text-sm text-kiddo-muted u-stagger">
-              <li className="inline-flex items-center gap-2 u-reveal">
+            <ul className="mt-6 flex flex-wrap md:items-center md:justify-center gap-x-8 gap-y-3 text-sm text-kiddo-muted md:u-stagger">
+              <li className="inline-flex items-center gap-2 md:u-reveal">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#97E0AA]" aria-hidden="true"></span>
                 🌱 Ankstyva prieiga
               </li>
-              <li className="inline-flex items-center gap-2 u-reveal">
+              <li className="inline-flex items-center gap-2 md:u-reveal">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#97E0AA]" aria-hidden="true"></span>
                 📬 Dalyvaukite apklausose
               </li>
-              <li className="inline-flex items-center gap-2 u-reveal">
+              <li className="inline-flex items-center gap-2 md:u-reveal">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#97E0AA]" aria-hidden="true"></span>
                 🎁 Gaukite išskirtinius pasiūlymus
               </li>
