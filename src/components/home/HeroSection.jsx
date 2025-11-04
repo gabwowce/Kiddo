@@ -19,7 +19,7 @@ export default function HeroSection(){
                     Išjunk trukdžius. Įjunk mokymąsi.
                     </h1>
                     <p className="u-reveal text-kiddo-muted leading-7 max-w-[454px] tracking-[-0.003em] ">
-                    „Kiddo School Mode“ automatiškai blokuoja nereikalingas programėles pamokų metu – ramybė klasėje be pastangų.
+                    „Kidcan“ automatiškai blokuoja nereikalingas programėles pamokų metu – ramybė klasėje be pastangų.
                     </p>
                     <Link
                     href="/survey"

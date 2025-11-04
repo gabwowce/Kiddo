@@ -8,6 +8,12 @@ import BenefitsUsersSection from "@/components/home/school/BenefitsUsersSection"
 import ClassHelpSection from "@/components/home/school/ClassHelpSection";
 import WhyNowSection from "@/components/home/school/WhyNowSection";
 
+export const metadata = {
+  title: "Pagrindinis",
+  description: "Kidcan – sprendimas mokykloms valdyti mokinių telefonus.",
+};
+
+
 export default function Page() {
   return (
     <>

@@ -1,20 +1,12 @@
 "use client";
 
-import Logo from "@/asset/kiddo-logo.png";
-import Image from "next/image";
+import Logo from "@/asset/logo.svg"; // SVGR – grąžina React komponentą
 import Link from "next/link";
 
 export default function LogoLink() {
   return (
-    <Link href="/" className="shrink-0 flex items-center" aria-label="Kiddo home">
-      <Image
-        src={Logo}
-        alt="Kiddo"
-        width={138}
-        height={54}
-        priority
-        className="h-[37px] md:h-[54px] w-auto"
-      />
+    <Link href="/" className="shrink-0 flex items-center justify-center" aria-label="Kiddo home">
+      <Logo className="w-[119px] h-[37px]" aria-hidden="true" focusable="false" />
     </Link>
   );
 }

@@ -17,7 +17,7 @@ export default function ProblemSection(){
                         Ne telefonai problema. Problema – kaip juos suvaldyti.
                         </h2>
                         <p className="u-reveal text-kiddo-muted text-center leading-7 tracking-[-0.003em] text-lg md:text-xl">
-                          Mokytojai pavargę nuo telefono ginčų, tėvai nori ryšio. Abi pusės laimi su „School Mode“.
+                          Mokytojai pavargę nuo telefono ginčų, tėvai nori ryšio. Abi pusės laimi su „Kidcan“.
                         </p>
                     </div>
                       <MobileStatCarousel items={stats} />

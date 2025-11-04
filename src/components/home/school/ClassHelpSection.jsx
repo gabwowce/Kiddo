@@ -32,7 +32,7 @@ function FeatureCard({ emoji = "✅", title, description }) {
 
 export default function ClassHelpSection({
   eyebrow = "NEUŽTENKA RAŠYTI TAISYKLES.",
-  title = 'Kaip „Kiddo“ padės jūsų klasei ⚡',
+  title = 'Kaip „Kidcan“ padės jūsų klasei ⚡',
   lead = "Vienas sprendimas, kuris palengvina kasdienybę mokytojams, tėvams ir mokiniams.",
   items = [
     {
@@ -68,7 +68,7 @@ export default function ClassHelpSection({
       emoji: "🌐",
       title: "Veikia visur",
       description:
-        "iOS ir Android įrenginiuose — „School Mode“ keliauja kartu su mokiniu.",
+        "iOS ir Android įrenginiuose — „Kidcan“ keliauja kartu su mokiniu.",
     },
     {
       emoji: "🔒",

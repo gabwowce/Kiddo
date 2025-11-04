@@ -19,7 +19,16 @@ export default function JoinMovementCta(){
             <div className="u-reveal my-12 md:my-16">
              
               <Link
-                  href="/survey"
+                  href={{
+    pathname: "/survey",
+    query: {
+      source: "homepage-hero",
+      audience: "schools",
+      utm_source: "website",
+      utm_medium: "cta",
+      utm_campaign: "offer",
+    },
+  }}
                   className="inline-flex items-center justify-center bg-kiddo-brand2 px-5 py-3 text-white font-bold hover:bg-kiddo-brand2/80 w-full max-w-[250px] text-center shadow-[0_4px_4px_rgba(0,0,0,0.25)] leading-6 tracking-0"
                 >
                   Gauti pasiulymą

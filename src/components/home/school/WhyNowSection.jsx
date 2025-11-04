@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function WhyNowSection({
   eyebrow = "KODĖL DABAR",
-  title = "Nuo šių metų visos Lietuvos mokyklos privalės parengti aiškias taisykles dėl mobiliųjų telefonų naudojimo.",
+  title = "Iki 2026 metų rugsėjo 1 dienos visos Lietuvos mokyklos privalo parengti aiškias taisykles dėl mobiliųjų telefonų naudojimo.",
   lead = `Skamba puikiai ant popieriaus — bet kaip tai įgyvendinti realioje klasėje?
-Kiddo School Mode padeda mokykloms paversti taisykles veiksmais:
+„Kidcan“ padeda mokykloms paversti taisykles veiksmais:
 programėlės nutildomos, skambučiai lieka aktyvūs, dėmesys grįžta.`,
   bullets = [
     "Mokytojai sutaupo laiką",

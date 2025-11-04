@@ -42,7 +42,7 @@ export default function DailyBattlesSection (){
                        <div className="mt-12 u-stagger">
                          <p className="font-bold text-xl leading-6 tracking-[-0.003em] u-reveal">Tai neturi būti mūšis.</p>
                          <p className="text-kiddo-muted leading-6 u-reveal">
-                           Aiškios taisyklės + automatinis „School Mode“ = blaškančios programėlės nutildomos, skambučiai ir SMS – visada veikia.
+                           Aiškios taisyklės + „Kidcan“ = blaškančios programėlės nutildomos, skambučiai ir SMS – visada veikia.
                          </p>
                        </div>
                      </div>
