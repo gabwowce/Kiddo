@@ -18,7 +18,6 @@ export default function OfferFormPage() {
             id="HROUGdAz"
             hideHeaders
             hideFooter
-            hidden={hidden}
             style={{ width: "100%", height: "100%" }}
             onReady={() => {
               // gtag("event", "lead_form_view");
