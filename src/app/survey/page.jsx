@@ -1,28 +1,14 @@
 "use client";
 
 import { Widget } from "@typeform/embed-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useMemo } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function OfferFormPage() {
-  const sp = useSearchParams();
-  const pathname = usePathname();
+
   const router = useRouter();
 
-  const hidden = useMemo(() => {
-    const get = (k) => sp.get(k) || "";
-    return {
-      utm_source: get("utm_source"),
-      utm_medium: get("utm_medium"),
-      utm_campaign: get("utm_campaign"),
-      utm_content: get("utm_content"),
-      utm_term: get("utm_term"),
-      source: get("source") || "offer-cta",
-      audience: get("audience") || "schools",
-      path: pathname || "/survey",
-      ref: typeof document !== "undefined" ? document.referrer : "",
-    };
-  }, [sp, pathname]);
+
 
   return (
     <main className="min-h-dvh h-dvh overflow-hidden">
